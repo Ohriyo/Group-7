@@ -27,6 +27,7 @@ const students = [
 ]
 
 const app = express();
+app.use(express.json());
 
 app.get('/student', (req, res) => {
   res.send(students);
@@ -65,3 +66,5 @@ app.delete('/student/:id', (req, res) => {
 app.listen(3000, () => {
   console.log(`Server is running on port 3000`)
 });
+
+//URL for testing is on README.md file
