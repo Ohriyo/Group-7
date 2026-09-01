@@ -63,8 +63,6 @@ app.delete('/student/:id', (req, res) => {
   res.send(deletedStudent[0]);
 });
 
-app.listen(3000, () => {
-  console.log(`Server is running on port 3000`)
-});
+export default app;
 
 //URL for testing is on README.md file
