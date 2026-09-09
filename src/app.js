@@ -1,7 +1,8 @@
 import express from "express";
 
 const students = [ 
-  { id: 1,
+  { 
+    id: 1,
     name: "Rio Pana",
     age: 21,
     course: "Computer Science"
