@@ -7,7 +7,7 @@ import {
   createStudent,
   updateStudent,
   deleteStudent
-} from "../controllers/student.controller.js";
+} from "../controllers/studentController.js";
  
 const router = express.Router();
 
