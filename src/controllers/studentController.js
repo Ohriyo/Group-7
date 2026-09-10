@@ -1,33 +1,10 @@
-const students = [
-  {
-    id: 1,
-    name: "Rio Pana",
-    age: 21,
-    course: "Computer Science",
-  },
-  {
-    id: 2,
-    name: "Nesline Diaz",
-    age: 21,
-    course: "Computer Science",
-  },
-  {
-    id: 3,
-    name: "Kate Ronda",
-    age: 21,
-    course: "Computer Science",
-  },
-  {
-    id: 4,
-    name: "Karen Clair Probadora",
-    age: 21,
-    course: "Computer Science",
-  },
-];
+import students from "../models/studentModel.js";
 
-export const getStudents = (req, res) => {
+
+export const getAllStudents = (req, res) => {
   res.send(students);
 };
+
 
 export const getStudentById = (req, res) => {
   const student = students.find((s) => s.id === parseInt(req.params.id));
