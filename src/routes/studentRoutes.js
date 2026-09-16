@@ -1,6 +1,4 @@
 import express from "express";
-
-// Importing controller functions for handling student-related requests
 import {
   getAllStudents,
   getStudentById,
@@ -8,15 +6,17 @@ import {
   updateStudent,
   deleteStudent
 } from "../controllers/studentController.js";
+import { protect } from "../middleware/authMiddleware.js"; // <-- ADD IMPORT
  
 const router = express.Router();
 
-// Defining routes for student-related operations
+// Public Routes (Anyone can view)
 router.get('/student', getAllStudents);
 router.get('/student/:id', getStudentById);
-router.post('/student', createStudent);
-router.patch('/student/:id', updateStudent);
-router.delete('/student/:id', deleteStudent);
+
+// Protected Routes (Require JWT)
+router.post('/student', protect, createStudent);
+router.patch('/student/:id', protect, updateStudent);
+router.delete('/student/:id', protect, deleteStudent);
  
 export default router;
- 
