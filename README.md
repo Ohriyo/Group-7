@@ -81,4 +81,4 @@ DELETE http://localhost:3000/student/1
 
 ## Notes
 - For POST and PATCH requests, set the request body type to **raw → JSON** in Postman/Thunder Client.
-- Make sure the `Content-Type: application/json` header is set.
+- Make sure the `Content-Type: application/json` header is set

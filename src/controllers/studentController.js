@@ -1,8 +1,10 @@
 import { students } from "../models/studentModel.js";
 
-export const getStudents = (req, res) => {
+
+export const getAllStudents = (req, res) => {
   res.send(students);
 };
+
 
 export const getStudentById = (req, res) => {
   const student = students.find((s) => s.id === parseInt(req.params.id));

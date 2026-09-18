@@ -1,21 +1,14 @@
 import express from "express";
-import {
-  getStudents,
-  getStudentById,
-  createStudent,
-  updateStudent,
-  deleteStudent,
-} from "./controllers/studentController.js";
+import cors from "cors"; 
+import studentRoutes from "./routes/studentRoutes.js"; 
+import authRoutes from "./routes/authRoutes.js"; 
 
 const app = express();
+app.use(cors()); // Allow frontend to communicate with backend
 app.use(express.json());
 
-app.get("/student", getStudents);
-app.get("/student/:id", getStudentById);
-app.post("/student", createStudent);
-app.patch("/student/:id", updateStudent);
-app.delete("/student/:id", deleteStudent);
+// Routes
+app.use("/api/auth", authRoutes); 
+app.use(studentRoutes); 
 
 export default app;
-
-//URL for testing is on README.md file
