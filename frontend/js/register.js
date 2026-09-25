@@ -27,7 +27,6 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         const data = await res.json();
 
         if (data.success) {
-            // Show success message and redirect to login after a short delay
             successDiv.textContent = "Registration successful! Redirecting to login...";
             successDiv.style.display = "block";
             

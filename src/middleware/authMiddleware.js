@@ -30,3 +30,5 @@ export const protect = async (req, res, next) => {
     res.status(401).json({ success: false, message: "Not authorized, token failed" });
   }
 };
+
+export default protect;
